@@ -36,7 +36,7 @@ function checkSchedule() {
     const currentTime = now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2) + ':' + ('0' + now.getSeconds()).slice(-2);
 	console.log(currentTime);
     // Find the schedule entry that matches the current time
-    const period = schedule.find(entry => return entry.time === currentTime);
+    const period = schedule.find(entry => entry.time === currentTime);
     console.log(period);
     if (period) {
         playBell();
