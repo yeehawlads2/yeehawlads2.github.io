@@ -42,6 +42,7 @@ function checkSchedule() {
         console.log(period.label); // Log the period label to the console
         document.getElementById('periodLabel').innerText = period.label;
     } else {
+		playBell();
         document.getElementById('periodLabel').innerText = "Waiting for schedule...";
     }
 }
