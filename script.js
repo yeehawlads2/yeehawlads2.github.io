@@ -24,7 +24,8 @@ const schedule = [
     { time: '09:47:00', label: 'HS Staff Dismissed @ 4:22 PM' }
 ];
 
-const bellSound = document.getElementById('bellSound');
+const bellSound = new Audio('bell.mp3');
+
 
 function playBell() {
     bellSound.play();
@@ -35,8 +36,8 @@ function checkSchedule() {
     const currentTime = now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2) + ':' + ('0' + now.getSeconds()).slice(-2);
 
     // Find the schedule entry that matches the current time
-    const period = schedule.find(entry => entry.time === currentTime);
-    
+    var period = schedule.find(entry => entry.time === currentTime);
+    console.log(period);
     if (period) {
         playBell();
         console.log(period.label); // Log the period label to the console
