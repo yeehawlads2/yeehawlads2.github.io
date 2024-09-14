@@ -5,18 +5,14 @@ const schedule = [
     { time: '09:58:00', label: 'Period 2 Begin @ 9:58 AM' },
     { time: '11:28:00', label: 'Period 2 End @ 11:28 AM' },
     { time: '11:31:00', label: 'Lunch/Advisory Block 1 Begin @ 11:31 AM' },
-	{ time: '11:42:00', label: 'Lunch/Advisory Block 1 End @ 11:59 AM' },
-	{ time: '11:43:00', label: 'Lunch/Advisory Block 1 End @ 11:59 AM' },
-	{ time: '11:44:00', label: 'Lunch/Advisory Block 1 End @ 11:59 AM' },
-	{ time: '11:44:30', label: 'Lunch/Advisory Block 1 End @ 11:59 AM' },
-	{ time: '11:45:00', label: 'Lunch/Advisory Block 1 End @ 11:59 AM' },
-	{ time: '11:47:00', label: 'Lunch/Advisory Block 1 End @ 11:59 AM' },
-	{ time: '11:59:00', label: 'Lunch/Advisory Block 1 End @ 11:59 AM' },
     { time: '11:59:00', label: 'Lunch/Advisory Block 1 End @ 11:59 AM' },
-    { time: '12:27:00', label: 'Lunch/Advisory Block 2 Begin @ 12:02 PM' },
+    { time: '12:02:00', label: 'Lunch/Advisory Block 2 Begin @ 12:02 PM' },
     { time: '12:30:00', label: 'Lunch/Advisory Block 2 End @ 12:30 PM' },
-    { time: '12:29:30', label: 'Lunch/Advisory Block 3 Begin @ 12:33 PM' },
+    { time: '12:33:00', label: 'Lunch/Advisory Block 3 Begin @ 12:33 PM' },
     { time: '13:01:00', label: 'Lunch/Advisory Block 3 End @ 1:01 PM' },
+	{ time: '13:03:00', label: 'Lunch/Advisory Block 3 End @ 1:03 PM' },
+	{ time: '13:04:00', label: 'Lunch/Advisory Block 3 End @ 1:04 PM' },
+	{ time: '13:05:00', label: 'Lunch/Advisory Block 3 End @ 1:05 PM' },
     { time: '13:04:00', label: 'Period 6 Begin @ 1:04 PM' },
     { time: '14:34:00', label: 'Period 6 End @ 2:34 PM' },
     { time: '14:37:00', label: 'Period 7 Begin @ 2:37 PM' },
@@ -34,9 +30,11 @@ function playBell() {
 function checkSchedule() {
     const now = new Date();
     const currentTime = now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2) + ':' + ('0' + now.getSeconds()).slice(-2);
-	console.log(currentTime);
+	const currentTime1 = now.getHours() + ':';
+
+	console.log(currentTime1);
     // Find the schedule entry that matches the current time
-    const period = schedule.find(entry => entry.time === currentTime);
+    let period = schedule.find(entry => entry.time == currentTime1);
     console.log(period);
     if (period) {
         playBell();
