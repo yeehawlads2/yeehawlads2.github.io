@@ -9,10 +9,10 @@ const schedule = [
     { time: '12:02:00', label: 'Lunch/Advisory Block 2 Begin @ 12:02 PM' },
     { time: '12:30:00', label: 'Lunch/Advisory Block 2 End @ 12:30 PM' },
     { time: '12:33:00', label: 'Lunch/Advisory Block 3 Begin @ 12:33 PM' },
-    { time: '13:01:00', label: 'Lunch/Advisory Block 3 End @ 1:01 PM' },
-	{ time: '13:03:00', label: 'Lunch/Advisory Block 3 End @ 1:03 PM' },
-	{ time: '13:04:00', label: 'Lunch/Advisory Block 3 End @ 1:04 PM' },
-	{ time: '13:05:00', label: 'Lunch/Advisory Block 3 End @ 1:05 PM' },
+    { time: '13:06:00', label: 'Lunch/Advisory Block 3 End @ 1:01 PM' },
+	{ time: '13:07:00', label: 'Lunch/Advisory Block 3 End @ 1:03 PM' },
+	{ time: '13:08:00', label: 'Lunch/Advisory Block 3 End @ 1:04 PM' },
+	{ time: '13:09:00', label: 'Lunch/Advisory Block 3 End @ 1:05 PM' },
     { time: '13:04:00', label: 'Period 6 Begin @ 1:04 PM' },
     { time: '14:34:00', label: 'Period 6 End @ 2:34 PM' },
     { time: '14:37:00', label: 'Period 7 Begin @ 2:37 PM' },
@@ -30,11 +30,11 @@ function playBell() {
 function checkSchedule() {
     const now = new Date();
     const currentTime = now.getHours() + ':' + ('0' + now.getMinutes()).slice(-2) + ':' + ('0' + now.getSeconds()).slice(-2);
-	const currentTime1 = now.getHours() + ':';
+	//const currentTime1 = now.getHours() + ':';
 
-	console.log(currentTime1);
+	console.log(currentTime);
     // Find the schedule entry that matches the current time
-    let period = schedule.find(entry => entry.time == currentTime1);
+    let period = schedule.find(entry => entry.time == currentTime);
     console.log(period);
     if (period) {
         playBell();
