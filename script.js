@@ -24,7 +24,7 @@ const schedule = [
     { time: '09:47:00', label: 'HS Staff Dismissed @ 4:22 PM' }
 ];
 
-const bellSound = document.getElementById('bellSound');
+const bellSound = new Audio('bell.mp3');
 
 
 function playBell() {
